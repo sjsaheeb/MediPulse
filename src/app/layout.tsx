@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "../context/AppContext";
 import { ToastProvider } from "../components/ui/Toast";
 import DashboardLayout from "../components/layout/DashboardLayout";
-
-const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MediPulse - Smart Medicine Reminder & Health Monitoring",
@@ -17,7 +14,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, maxi
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.variable} antialiased h-full`}>
+      <body className="antialiased h-full">
         <AppProvider>
           <ToastProvider>
             <DashboardLayout>{children}</DashboardLayout>
